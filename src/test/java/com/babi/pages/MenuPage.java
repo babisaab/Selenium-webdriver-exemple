@@ -13,4 +13,12 @@ public class MenuPage extends BasePage {
 		clicarLink("Contas");
 		clicarLink("Listar");
 	}
+	
+	public void criarMovimentacao() {
+		clicarLink("Criar Movimentação");
+	}
+	
+	public void resumoMensal() {
+		clicarLink("Resumo Mensal");
+	}
 }

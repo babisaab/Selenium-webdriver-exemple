@@ -33,7 +33,10 @@ public class ContaTeste extends BaseTeste {
 	
 	@Test
 	public void inserirContaMesmoNome() {
-		
+		menuPage.acessarContas();
+		contaPage.setNome("Conta testada");
+		contaPage.salvar();
+		Assert.assertEquals("Já existe uma conta com esse nome!", contaPage.obterMensagemErro());
 	}
 	
 }

@@ -117,6 +117,10 @@ public class BasePage {
 		clicarBotao(By.id(id));
 	}
 	
+	public void clicarBotaoPorTexto(String texto) {
+		clicarBotao(By.xpath("//button[.='"+texto+"']"));
+	}
+	
 	public String obterValueElemento(String id) {
 		return getDriver().findElement(By.id(id)).getAttribute("value");
 	}
@@ -218,7 +222,7 @@ public class BasePage {
 		int idLinha = -1;
 		for(int i = 0; i < linhas.size(); i++) {
 			if(linhas.get(i).getText().equals(valor)) {
-				idLinha = i+1; //xpath começa com 1 e listas com 0, por isso i+1;
+				idLinha = i+1; //xpath comeï¿½a com 1 e listas com 0, por isso i+1;
 				break;
 			}
 		}

@@ -12,7 +12,7 @@ public class ContaPage extends BasePage {
 	}
 	
 	public void salvar() {
-		clicarBotao(By.xpath("/html/body/div[2]/form/div[2]/button"));
+		clicarBotaoPorTexto("Salvar");
 	}
 	
 	public String obterMensagemSucesso() {
@@ -20,7 +20,11 @@ public class ContaPage extends BasePage {
 	}
 	
 	public void clicarIconeAlterar(String string) {
-		obterCelula("Conta", string, "Ações", "tabelaContas")
+		obterCelula("Conta", string, "AÃ§Ãµes", "tabelaContas")
 		.findElement(By.xpath(".//span[@class='glyphicon glyphicon-edit']")).click();
+	}
+	
+	public String obterMensagemErro() {
+		return obterTexto(By.xpath(".//*[@class='alert alert-danger']"));
 	}
 }
