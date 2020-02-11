@@ -25,8 +25,8 @@ public class MovimentacaoTeste extends BaseTeste{
 		menuPage.criarMovimentacao();
 		
 		mPage.selecionarTipoMovimentacao("Receita");
-		mPage.setDataMovimentacao("21/01/2020");
-		mPage.setDataPagamento("22/01/2020");
+		mPage.setDataMovimentacao(dataUtil.obterdataFormatada(new Date()));
+		mPage.setDataPagamento(dataUtil.obterdataFormatada(new Date()));
 		mPage.setDescricao("pagamento cliente");
 		mPage.setInteressado("fulano");
 		mPage.setValor("200");

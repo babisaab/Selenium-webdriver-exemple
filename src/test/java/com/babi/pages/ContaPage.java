@@ -27,4 +27,9 @@ public class ContaPage extends BasePage {
 	public String obterMensagemErro() {
 		return obterTexto(By.xpath(".//*[@class='alert alert-danger']"));
 	}
+	
+	public void clicarRemoverConta(String string) {
+		obterCelula("Conta", string, "Ações", "tabelaContas")
+		.findElement(By.xpath(".//span[@class='glyphicon glyphicon-remove-circle']")).click();
+	}
 }
