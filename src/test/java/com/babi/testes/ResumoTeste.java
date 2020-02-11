@@ -1,9 +1,14 @@
 package com.babi.testes;
 
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.openqa.selenium.By;
+//import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 
 import com.babi.core.BaseTeste;
 import com.babi.core.DriverFactory;
@@ -30,23 +35,16 @@ public class ResumoTeste extends BaseTeste {
 	@Test
 	public void teste2_resumoMensal() {
 		menuPage.resumoMensal();
-		
-		Assert.assertEquals("Seu Barriga - Extrato", DriverFactory.getDriver().getTitle());
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
-}
+		Assert.assertEquals("Seu Barriga - Extrato", DriverFactory.getDriver().getTitle());
+
+		//try {
+		List<WebElement> elementosEncontrados = 
+			DriverFactory.getDriver().findElements(By.xpath("//*[@id='tabelaExtrato']/tbody/tr"));
+			Assert.assertEquals(0, elementosEncontrados.size());
+		
+		//Assert.fail();	
+		//} catch (NoSuchElementException e) {
+
+		}
+	}
