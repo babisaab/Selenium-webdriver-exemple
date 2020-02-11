@@ -1,21 +1,23 @@
 package com.babi.testes;
 
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import com.babi.core.BaseTeste;
 import com.babi.pages.ContaPage;
 import com.babi.pages.MenuPage;
 
 
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ContaTeste extends BaseTeste {
 
 	MenuPage menuPage = new MenuPage();
 	ContaPage contaPage = new ContaPage();
 	
 	@Test
-	public void inserirConta() {
+	public void test1_inserirConta() {
 		menuPage.acessarContas();
 		contaPage.setNome("Conta Teste");
 		contaPage.salvar();
@@ -23,7 +25,7 @@ public class ContaTeste extends BaseTeste {
 	}
 	
 	@Test
-	public void alterarConta() {
+	public void test2_alterarConta() {
 		menuPage.listarContas();
 		contaPage.clicarIconeAlterar("Conta Teste");
 		contaPage.setNome("Conta testada");
@@ -32,22 +34,14 @@ public class ContaTeste extends BaseTeste {
 	}
 	
 	@Test
-	public void inserirContaMesmoNome() {
+	public void test3_inserirContaMesmoNome() {
 		menuPage.acessarContas();
 		contaPage.setNome("Conta testada");
 		contaPage.salvar();
 		Assert.assertEquals("Já existe uma conta com esse nome!", contaPage.obterMensagemErro());
 	}
 	
-	@Test
-	public void excluirConta() {
-		menuPage.listarContas();
-		
-		contaPage.clicarRemoverConta("Conta com movimentacao");
-		
-		Assert.assertEquals("Conta em uso na movimentações", contaPage.obterMensagemErro());
-		
-	}
+
 	
 	
 	

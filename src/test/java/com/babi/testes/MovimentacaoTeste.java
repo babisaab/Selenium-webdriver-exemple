@@ -5,7 +5,9 @@ import java.util.Date;
 import java.util.List;
 
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import com.babi.core.BaseTeste;
 import com.babi.pages.MenuPage;
@@ -13,7 +15,7 @@ import com.babi.pages.MovimentacaoPage;
 import com.babi.utils.*;
 
 
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MovimentacaoTeste extends BaseTeste{
 
        private MenuPage menuPage = new MenuPage();
@@ -21,7 +23,7 @@ public class MovimentacaoTeste extends BaseTeste{
        private DataUtils dataUtil = new DataUtils();
 	
 	@Test
-	public void inserirMovimentacao() {
+	public void teste1_inserirMovimentacao() {
 		menuPage.criarMovimentacao();
 		
 		mPage.selecionarTipoMovimentacao("Receita");
@@ -40,7 +42,7 @@ public class MovimentacaoTeste extends BaseTeste{
 	}
 	
 	@Test
-	public void validarCamposObrigatorios() {
+	public void test2_validarCamposObrigatorios() {
 		menuPage.criarMovimentacao();
 		
 		mPage.salvar();
@@ -56,7 +58,7 @@ public class MovimentacaoTeste extends BaseTeste{
 	}
 	
 	@Test
-	public void inserirMovimentacaoFutura() {
+	public void test3_inserirMovimentacaoFutura() {
         menuPage.criarMovimentacao();
 		
         
