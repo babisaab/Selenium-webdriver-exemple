@@ -9,7 +9,7 @@ import com.babi.core.BasePage;
 public class LoginPage extends BasePage {
 	
 	public void acessarTelaLogin() {
-		System.setProperty("webdriver.chrome.driver","\\Users\\bssaab\\Desktop\\driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","\\Users\\babys\\Desktop\\driver\\chromedriver.exe");
 		getDriver().get("https://seubarriga.wcaquino.me/login");
 	}
 

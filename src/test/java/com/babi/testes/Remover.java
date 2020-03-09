@@ -18,7 +18,7 @@ public class Remover extends BaseTeste {
 public void excluirConta() {
 	menuPage.listarContas();
 	
-	contaPage.clicarRemoverConta("Conta com movimentacao");
+	contaPage.clicarRemoverConta("Conta testada");
 	
 	Assert.assertEquals("Conta em uso na movimentações", contaPage.obterMensagemErro());
 	
